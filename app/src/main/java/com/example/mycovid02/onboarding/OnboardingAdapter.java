@@ -14,11 +14,11 @@ public class OnboardingAdapter extends FragmentStateAdapter {
     public OnboardingAdapter(FragmentActivity fm) {
         super(fm);
     }
+    String ass ="ass";
 
     @Override
     public Fragment createFragment(int pos) {
 
-        String ass ="ass";
         Log.i( ass,"Saya di OnboardingAdapter");
 
         switch (pos) {
@@ -60,6 +60,7 @@ public class OnboardingAdapter extends FragmentStateAdapter {
                         R.string.onboarding_whatitdoes_text2,
                         false);
             case 5:
+                Log.i( ass,"Saya di case 5");
                 return FinishBoardingFragment.newInstance();
 
         }

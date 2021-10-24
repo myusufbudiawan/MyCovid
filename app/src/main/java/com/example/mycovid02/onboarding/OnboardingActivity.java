@@ -16,9 +16,10 @@ public class OnboardingActivity extends FragmentActivity {
     private ViewPager2 mPager;
     private FragmentStateAdapter mpagerAdapter;
 
+    String ass ="ass";
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        String ass ="ass";
         Log.i( ass,"Saya di OnboardingActivity");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onboarding);
@@ -36,6 +37,7 @@ public class OnboardingActivity extends FragmentActivity {
         } else {
             DP3T.start(this);
             setResult(RESULT_OK);
+            Log.i( ass,"Saya finishing OnboardingActivity");
             finish();
         }
     }
