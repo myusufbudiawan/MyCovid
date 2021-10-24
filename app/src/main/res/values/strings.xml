@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">MyCovid 0.2</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_continue_btn">"Continue"</string>
+    <string name="onboarding_finish_btn">"Finish"</string>
+    <string name="reset_onboarding">"Reset onboarding"</string>
+    <string name="onboarding_aim_heading">"The aim"</string>
+    <string name="onboarding_aim_title">"Getting started!"</string>
+    <string name="onboarding_aim_text1">"MyCovid is a privacy-preserving contact tracing application that helps the government efforts in fighting the Covid-19 pandemic."</string>
+    <string name="onboarding_aim_text2">"This app will determine possible infection and alert it to you"</string>
+    <string name="onboarding_privacy_heading">"Privacy by design"</string>
+    <string name="onboarding_privacy_title">"Preservation of privacy"</string>
+    <string name="onboarding_privacy_text1">"Devices exchange data without revealing your identity."</string>
+    <string name="onboarding_privacy_text2">"All data is encrypted and only saved locally on the smartphone."</string>
+    <string name="onboarding_hiw_heading">"How it works?"</string>
+    <string name="onboarding_hiw_title">"How it works?"</string>
+    <string name="onboarding_hiw_text1">"The app uses Bluetooth Low Energy (BLE) to automatically detect when two device is in close proximity."</string>
+    <string name="onboarding_hiw_text2">"It does not use location critical data like GPS or continuous internet connection."</string>
+    <string name="onboarding_whatitdoes_heading">"What does the app do?"</string>
+    <string name="onboarding_whatitdoes_title">"Infection report"</string>
+    <string name="onboarding_whatitdoes_text1">"If a possible infection is suspected, the app will notify you."</string>
+    <string name="onboarding_whatitdoes_text2">"You can protect yourself and others by taking action like quarantine."</string>
+    <string name="onboarding_bluetooth_title">"Enable Bluetooth"</string>
+    <string name="onboarding_bluetooth_text">"MyCovid need Bluetooth and Notification"</string>
+    <string name="onboarding_bluetooth_button">"Enable Bluetooth"</string>
+    <string name="onboarding_gtk">"Information"</string>
+    <string name="onboarding_bluetooth_gtk_title1">"Anonymous"</string>
+    <string name="onboarding_bluetooth_gtk_text1">"No personal data is exchanged."</string>
+    <string name="onboarding_bluetooth_gtk_title2">"Battery usage"</string>
+    <string name="onboarding_bluetooth_gtk_text2">"MyCovid will not affect your battery significantly."</string>
+    <string name="onboarding_push_title">"Allow notification"</string>
+    <string name="onboarding_push_text">"Please allow notifications in order to get alerts from the MyCovid."</string>
+    <string name="onboarding_push_button">"Allow"</string>
+    <string name="onboarding_push_gtk_title1">"Immediate alert"</string>
+    <string name="onboarding_push_gtk_text1">"You'll get a notification on the lock screen if there's a possible infection."</string>
+    <string name="onboarding_go_title">"You are all set up!"</string>
+    <string name="onboarding_go_text">"Be careful when going out and watch for our notification for possible infection."</string>
+    <string name="onboarding_go_button">"Home"</string >
+    <string name="android_onboarding_bt_permission_title">"Toggle on Bluetooth location."</string>
+    <string name="android_onboarding_bt_permission_text">"You must activate the location function in order for the app to run and for Bluetooth to be accessible."</string>
+    <string name="android_onboarding_bt_permission_button">"Allow"</string>
+    <string name="android_onboarding_bt_permission_gtk">"Good to know"</string>
+    <string name="android_onboarding_bt_permission_info1_title">"Your location is safe"</string>
+    <string name="android_onboarding_bt_permission_info1_text">"On Android devices, enabling Bluetooth requires you to enable the sharing of your location. the app does not register your location at any point in time."</string>
+    <string name="android_onboarding_bt_permission_info2_title">"You remain anonymous"</string>
+    <string name="android_onboarding_bt_permission_info2_text">"No personal data is visible via Bluetooth."</string>
+    <string name="android_onboarding_battery_permission_title">"Ignore battery optimisation"</string>
+    <string name="android_onboarding_battery_permission_text">"To identify encounters at all times, the battery optimization feature must be turned off."</string>
+    <string name="android_onboarding_battery_permission_button">"Allow"</string>
+    <string name="android_onboarding_battery_permission_info1_title">"Only for MyCovid"</string>
+    <string name="android_onboarding_battery_permission_info1_text">"The application must also operate in the background in order to function since battery optimization is turned off for this app."</string>
+    <string name="android_onboarding_battery_permission_info2_title">"Minor increase in battery usage"</string>
+    <string name="android_onboarding_battery_permission_info2_text">"The app uses as little energy as possible to function.."</string>
+    <string name="android_onboarding_bt_permission_button_allowed">"Enabled"</string>
+    <string name="android_onboarding_battery_permission_button_deactivated">"Deactivated"</string>
+
+</resources>
