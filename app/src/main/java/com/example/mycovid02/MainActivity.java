@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         String ass = "ass";
         Log.i( ass,"Saya di MainActivity");
-        //startActivityForResult(new Intent(this, OnboardingActivity.class), 123);
+        //startActivityForResult(new Intent(this, OnboardingActivity.class), 12);
         startActivity(new Intent(this, OnboardingActivity.class));
     }
 }
