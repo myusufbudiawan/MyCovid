@@ -54,5 +54,31 @@
     <string name="android_onboarding_battery_permission_info2_text">"The app uses as little energy as possible to function.."</string>
     <string name="android_onboarding_bt_permission_button_allowed">"Enabled"</string>
     <string name="android_onboarding_battery_permission_button_deactivated">"Deactivated"</string>
+    <string name="tracing_active_text">Tracing is active</string>
+    <string name="tracing_turned_off_text">Tracing is inactive. Please reactivate tracing.</string>
+    <string name="tracing_ended_text">No futher encounter registered</string>
+    <string name="no_reports_title">No report</string>
+    <string name="exposed_title">Possible infection</string>
+    <string name="test_positive_title">Tested positive</string>
+    <string name="no_report_subtitle">No potential infection is reported</string>
+    <string name="exposed_subtitle">A suspected infection is exposed</string>
+    <string name="test_positive_subtitle">You are tested positive for the virus</string>
+    <string name="error_location_title">Location services is disabled</string>
+    <string name="error_ble_title">Bluetooth is disabled</string>
+    <string name="error_battery_title">Battery optimizer is activated</string>
+    <string name="error_time_title">Time synchronize error</string>
+    <string name="error_general_title">Unexpected error</string>
+    <string name="error_BLE_title">Restart required</string>
+    <string name="retry_button" />
+    <string name="error_retry_button">Retry</string>
+    <string name="allow_button">Allow</string>
+    <string name="pls_ble_title">Please turn on Bluetooth</string>
+    <string name="bluetooth_disabled_title">Bluetooth is disabled</string>
+    <string name="bluetooth_disabled_subtitle">Please enable bluetooth to resume tracing</string>
+    <string name="bluetooth_on_button">Turn on Bluetooth</string>
+    <string name="android_accessibility_back_button">Back</string>
+    <string name="handshakes_title_homescreen">Encounters</string>
+    <string name="tracing_setting_title">Tracing</string>
+    <string name="tracing_setting_text">Allow tracing</string>
 
 </resources>

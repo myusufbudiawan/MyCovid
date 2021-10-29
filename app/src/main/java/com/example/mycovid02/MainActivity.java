@@ -6,6 +6,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -14,10 +15,15 @@ import android.util.Log;
 
 import com.example.mycovid02.main.HomeFragment;
 import com.example.mycovid02.onboarding.OnboardingActivity;
+import com.example.mycovid02.tracing.TracingViewModel;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String STATE_CONSUMED_EXPOSED_INTENT = "STATE_CONSUMED_EXPOSED_INTENT";
     private MyDatabase myDatabase;
+
+    private TracingViewModel tracingViewModel;
+
     ActivityResultLauncher<Intent> mGetActivity;
 
     String ass = "ass";
@@ -57,7 +63,12 @@ public class MainActivity extends AppCompatActivity {
 
                 mGetActivity.launch(new Intent(this, OnboardingActivity.class));
             }
+        } else {
+            boolean consumedExposedIntent = savedInstanceState.getBoolean(STATE_CONSUMED_EXPOSED_INTENT);
         }
+
+        tracingViewModel = new ViewModelProvider(this).get(TracingViewModel.class);
+        tracingViewModel.sync();
 
     }
 

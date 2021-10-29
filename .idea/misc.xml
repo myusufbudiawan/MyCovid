@@ -5,8 +5,15 @@
       <map>
         <entry key="..\:/Important Files/Folders/Software Engineering/FYP/FPY 2/MyCovid02/app/src/main/res/layout/activity_onboarding.xml" value="0.17798913043478262" />
         <entry key="..\:/Important Files/Folders/Software Engineering/FYP/FPY 2/MyCovid02/app/src/main/res/layout/battery_permission_fragment.xml" value="0.22" />
+        <entry key="..\:/Important Files/Folders/Software Engineering/FYP/FPY 2/MyCovid02/app/src/main/res/layout/card_encounter.xml" value="0.13496376811594202" />
+        <entry key="..\:/Important Files/Folders/Software Engineering/FYP/FPY 2/MyCovid02/app/src/main/res/layout/card_report.xml" value="0.1" />
+        <entry key="..\:/Important Files/Folders/Software Engineering/FYP/FPY 2/MyCovid02/app/src/main/res/layout/contact_fragment.xml" value="0.1757852077001013" />
+        <entry key="..\:/Important Files/Folders/Software Engineering/FYP/FPY 2/MyCovid02/app/src/main/res/layout/error_status_view.xml" value="0.1757852077001013" />
         <entry key="..\:/Important Files/Folders/Software Engineering/FYP/FPY 2/MyCovid02/app/src/main/res/layout/finished_onboarding_fragment.xml" value="0.203125" />
-        <entry key="..\:/Important Files/Folders/Software Engineering/FYP/FPY 2/MyCovid02/app/src/main/res/layout/home_fragment.xml" value="0.2563405797101449" />
+        <entry key="..\:/Important Files/Folders/Software Engineering/FYP/FPY 2/MyCovid02/app/src/main/res/layout/fragment_tracing_box.xml" value="0.2563405797101449" />
+        <entry key="..\:/Important Files/Folders/Software Engineering/FYP/FPY 2/MyCovid02/app/src/main/res/layout/home_fragment.xml" value="0.15" />
+        <entry key="..\:/Important Files/Folders/Software Engineering/FYP/FPY 2/MyCovid02/app/src/main/res/layout/layout_status.xml" value="0.33016304347826086" />
+        <entry key="..\:/Important Files/Folders/Software Engineering/FYP/FPY 2/MyCovid02/app/src/main/res/layout/location_permission_fragment.xml" value="0.20260416666666667" />
         <entry key="..\:/Important Files/Folders/Software Engineering/FYP/FPY 2/MyCovid02/app/src/main/res/layout/onboarding_content_fragment.xml" value="0.25" />
       </map>
     </option>

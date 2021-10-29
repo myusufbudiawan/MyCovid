@@ -6,7 +6,7 @@ import android.os.PowerManager;
 
 public class FeatureCheck {
 
-    boolean isBluetoothEnabled(){
+    public static boolean isBluetoothEnabled(){
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (mBluetoothAdapter.isEnabled() && mBluetoothAdapter != null) {
             return true;
