@@ -53,13 +53,16 @@ public class OnboardingAdapter extends FragmentStateAdapter {
                 return BatteryPermissionFragment.newInstance();
 
             case 4:
+                return LocationPermissionFragment.newInstance();
+
+            case 5:
                 return ContentFragment.newInstance(
                         R.string.onboarding_whatitdoes_heading,
                         R.string.onboarding_whatitdoes_title,
                         R.string.onboarding_whatitdoes_text1,
                         R.string.onboarding_whatitdoes_text2,
                         false);
-            case 5:
+            case 6:
                 Log.i( ass,"Saya di case 5");
                 return FinishBoardingFragment.newInstance();
 
@@ -69,6 +72,6 @@ public class OnboardingAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 6;
+        return 7;
     }
 }

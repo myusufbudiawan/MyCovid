@@ -15,20 +15,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/NextStepTheme">
-
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".main.BottomNavigation"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:launchMode="singleTop">
-        <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".onboarding.OnboardingActivity"
             android:launchMode="singleTop" />
-
     </application>
 
 </manifest>

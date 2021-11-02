@@ -6,6 +6,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
@@ -15,7 +16,10 @@ import android.util.Log;
 
 import com.example.mycovid02.main.HomeFragment;
 import com.example.mycovid02.onboarding.OnboardingActivity;
+import com.example.mycovid02.statistics.CardTotalCases;
+import com.example.mycovid02.statistics.StatisticsFragment;
 import com.example.mycovid02.tracing.TracingViewModel;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +36,27 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        StatisticsFragment.getData();
+
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.nav_home:
+                    getSupportFragmentManager().beginTransaction().add(R.id.main_fragment_container, HomeFragment.newInstance())
+                            .commit();
+                    break;
+                case R.id.nav_statistics:
+                    getSupportFragmentManager().beginTransaction().add(R.id.main_fragment_container, StatisticsFragment.newInstance())
+                            .commit();
+                    break;
+                case R.id.nav_information:
+                    break;
+            }
+
+            return true;
+
+        });
 
         myDatabase = MyDatabase.getInstance(this);
 
@@ -74,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void showHomeFragment() {
         Log.i( ass,"Saya di showHomeFragment()");
+
+        Fragment selectedFragment = null;
 
         getSupportFragmentManager().beginTransaction().add(R.id.main_fragment_container, HomeFragment.newInstance())
                 .commit();

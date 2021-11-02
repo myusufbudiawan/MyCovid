@@ -36,7 +36,7 @@
     <string name="onboarding_push_gtk_text1">"You'll get a notification on the lock screen if there's a possible infection."</string>
     <string name="onboarding_go_title">"You are all set up!"</string>
     <string name="onboarding_go_text">"Be careful when going out and watch for our notification for possible infection."</string>
-    <string name="onboarding_go_button">"Home"</string >
+    <string name="onboarding_go_button">"Home"</string>
     <string name="android_onboarding_bt_permission_title">"Toggle on Bluetooth location."</string>
     <string name="android_onboarding_bt_permission_text">"You must activate the location function in order for the app to run and for Bluetooth to be accessible."</string>
     <string name="android_onboarding_bt_permission_button">"Allow"</string>
@@ -80,5 +80,12 @@
     <string name="handshakes_title_homescreen">Encounters</string>
     <string name="tracing_setting_title">Tracing</string>
     <string name="tracing_setting_text">Allow tracing</string>
+    <string name="location_btn_permission">Location is enabled</string>
+    <string name="android_foreground_service_notification_error_location_permission">Android requires location to be enabled to use the Bluetooth feature.</string>
+    <string name="button_ok">Okay</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Statistic Fragment</string>
+    <string name="case_active_subtitle">Total active cases as of </string>
+    <string name="percent">%</string>
 
 </resources>

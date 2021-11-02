@@ -1,6 +1,5 @@
 package com.example.mycovid02.main;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
@@ -72,7 +71,7 @@ public class HomeFragment extends Fragment {
         scrollView = view.findViewById(R.id.home_scrollview);
         tracingCard = view.findViewById(R.id.card_tracing);
 
-        setupTracing();
+        setupTracingView();
 
     }
 
@@ -82,7 +81,7 @@ public class HomeFragment extends Fragment {
         tracingViewModel.invalidateTracingStatus();
     }
 
-    private void setupTracing() {
+    private void setupTracingView() {
 
         TypedValue value = new TypedValue();
         getContext().getTheme().resolveAttribute(

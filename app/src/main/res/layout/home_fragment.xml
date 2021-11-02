@@ -7,26 +7,44 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/home_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="69dp"
+        android:background="@color/white">
 
         <TextView
+            style="@style/Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/app_name" />
 
+        <ImageView
+            android:id="@+id/myCovid_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_header_wide"
+            android:layout_gravity="center_horizontal"
+            android:paddingStart="10dp"
+            />
+
     </androidx.appcompat.widget.Toolbar>
+
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/grey_light">
+        android:background="@color/grey_light_medium">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/city_2"
+            />
 
         <ScrollView
             android:id="@+id/home_scrollview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/grey_light_medium">
+            >
 
             <LinearLayout
                 android:id="@+id/home_layout"
