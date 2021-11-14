@@ -6,14 +6,20 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.mycovid02.R;
-
-import org.w3c.dom.Text;
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.ValueFormatter;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,7 +28,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 
 public class StatisticsFragment extends Fragment {
 
@@ -30,8 +35,15 @@ public class StatisticsFragment extends Fragment {
     public static String[] active_case;
     public static String[] daily_deaths;
     public static String[] date;
+
+    ArrayList<Entry> seven_day_cases = new ArrayList<>();
+
     public static int total_line = 0;
     public static int total_line2 = 0;
+
+    public static int sum_active_case = 0;
+    public static int avg_active_case;
+    public static String avg_active_case_text;
 
     public static StatisticsFragment newInstance() {
         Bundle args = new Bundle();
@@ -57,6 +69,8 @@ public class StatisticsFragment extends Fragment {
 
             List<List<String>> records = new ArrayList<>();
 
+            String ass = "assdog";
+
             try {
                 URL cases_url = new URL(case_csv);
                 BufferedReader in = new BufferedReader(new InputStreamReader(cases_url.openStream()));
@@ -70,6 +84,9 @@ public class StatisticsFragment extends Fragment {
                 total_line = records.size();
 
                 new_case = new String[total_line];
+
+                Log.i( ass, String.valueOf(total_line));
+
                 date = new String[total_line];
                 active_case = new String[total_line];
 
@@ -100,6 +117,7 @@ public class StatisticsFragment extends Fragment {
 
             } catch (IOException e) {
                 e.printStackTrace();
+                Log.i( ass, "Failed to read cases");
             }
 
             try {
@@ -135,6 +153,8 @@ public class StatisticsFragment extends Fragment {
 
             } catch (IOException e) {
                 e.printStackTrace();
+                Log.i( ass, "Failed to read deaths");
+
             }
         });
         thread.start();
@@ -146,10 +166,6 @@ public class StatisticsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        int sum_active_case = 0;
-        int avg_active_case;
-        String avg_active_case_text;
 
         View cardActiveCases = view.findViewById(R.id.card_total_active);
         View cardDailyCases = view.findViewById(R.id.card_daily_case);
@@ -176,6 +192,10 @@ public class StatisticsFragment extends Fragment {
 
         TextView totalAvgCases = avgCases.findViewById(R.id.total_daily);
         TextView percentRelativeYesterday = vsYesterday.findViewById(R.id.total_daily);
+
+        LineChart graphCases = cardGraph.findViewById(R.id.lineChart);
+
+
 
         for (int i = new_case.length-1 ; i > new_case.length - 8; i--) {
 
@@ -206,9 +226,72 @@ public class StatisticsFragment extends Fragment {
         avgCasesTV.setText("7-day average");
         relativeYesterdayTV.setText("vs yesterday");
         totalAvgCases.setText(avg_active_case_text);
-        percentRelativeYesterday.setText(percentYesterdayStr);
+        percentRelativeYesterday.setText("%" + percentYesterdayStr);
+
+        setupGraph();
+
+        LineDataSet lineDataSet = new LineDataSet(seven_day_cases,"New cases per day");
+        ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+        dataSets.add(lineDataSet);
+
+        LineData data = new LineData(dataSets);
+
+        graphCases.setTouchEnabled(true);
+        graphCases.setPinchZoom(true);
+        graphCases.getDescription().setEnabled(false);
+
+        graphCases.setDrawGridBackground(false);
+        graphCases.getAxisRight().setEnabled(false);
+        graphCases.getAxisLeft().setAxisMinimum(0);
+
+        //graphCases.getXAxis().setValueFormatter(ValueFormatter());
+
+        graphCases.getAxisLeft().setAxisMaximum(8000);
+        graphCases.setData(data);
+
+        Legend l = graphCases.getLegend();
+        l.setForm(Legend.LegendForm.LINE);
+
+        graphCases.invalidate();
+
+        graphCases.animateXY(2000,2000);
 
 
     }
+
+    public void setupGraph() {
+//        seven_day_cases.add(new Entry(1, 1));
+//        seven_day_cases.add(new Entry(2, 3));
+//        seven_day_cases.add(new Entry(3, 5));
+//        seven_day_cases.add(new Entry(4, 7));
+//        seven_day_cases.add(new Entry(5, 9));
+//        seven_day_cases.add(new Entry(6, 11));
+//        seven_day_cases.add(new Entry(7, Float.parseFloat(new_case[8])));
+
+        int day = 1;
+
+        for (int i = new_case.length-7; i < new_case.length; i++){
+            seven_day_cases.add(new Entry(day, Float.parseFloat(new_case[i])));
+            day++;
+        }
+    }
+
+//    public ValueFormatter ValueFormatter() {
+//        int[] day_int = new int[6];
+//
+//        for (int i = 0; i < 7; i++) {
+//            day_int[i] = Integer.parseInt(days[i]);
+//        }
+//        return ;
+//    }
+
+//    private static class MyValueFormatter extends ValueFormatter {
+//        @Override
+//        public String getFormattedValue(float value) {
+//            String[] days = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
+//            return days;
+//        }
+//    }
+
 
 }
