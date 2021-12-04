@@ -23,13 +23,14 @@
 
             <TextView
                 android:layout_width="0dp"
+                style="@style/Title"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/spacing_medium"
                 android:layout_weight="1"
                 android:text="@string/handshakes_title_homescreen" />
 
             <ImageView
-                android:id="@+id/contacs_chevron"
+                android:id="@+id/contacts_chevron"
                 android:layout_width="@dimen/chevron_size_title"
                 android:layout_height="@dimen/chevron_size_title"
                 android:layout_marginEnd="@dimen/spacing_small"

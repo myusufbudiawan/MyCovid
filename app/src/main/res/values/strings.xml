@@ -87,5 +87,46 @@
     <string name="hello_blank_fragment">Statistic Fragment</string>
     <string name="case_active_subtitle">Total active cases as of </string>
     <string name="percent">%</string>
+    <string name="what_to_do_title">What should you do?</string>
+    <string name="what_to_do_text">You should obtain the authorisation code after you have been tested  positive for the virus.  By entering this code,  you will alert others.</string>
+    <string name="what_to_do_title1">Common symptoms</string>
+    <string name="what_to_do_text1">Feeling ill? Find out about Covid-19 symptoms</string>
+    <string name="what_to_do_title2">How to test?</string>
+    <string name="what_to_do_text2">Check out the Ministry of Health website listed health facilities to get tested and other methods to test.</string>
+    <string name="what_to_do_info_title">What is the code?</string>
+    <string name="what_to_do_info_text">"Those who has been tested positive for coronavirus (self test kit or from test facility) will receive the code. "</string>
+    <string name="what_to_do_info1_title">What type of data is sent?</string>
+    <string name="what_to_do_info1_text">Only the private keys from the app and encrypted ID is sent. There are no personal data sent to the server.</string>
+    <string name="what_to_do_info2_title">Will I still be anonymous?</string>
+    <string name="what_to_do_info2_text">Yes. although no personal data is transmitted, someone may remember their encounter from the date but it is unlikely.</string>
+    <string name="symptoms_info_title">Most common:</string>
+    <string name="symptoms_info_desc">\u25CF Fever \n\u25CF Cough \n\u25CF Tiredness \n\u25CF Loss of taste or smell</string>
+    <string name="symptoms_info_title2">Serious symptoms:</string>
+    <string name="symptoms_info_desc2">\u25CF Difficulty breathing or shortness of breath \n\u25CF Loss of speech or mobility, or confusion \n\u25CF Chest pain</string>
+    <string name="hyperlink2"> <a href="https://www.who.int/health-topics/coronavirus#tab=tab_3">Further information</a></string>
+    <string name="hyperlink3"><a href="https://covid-19.moh.gov.my/terkini">View more statistics</a></string>
+    <string name="test_info_title">Self test</string>
+    <string name="test_info_desc">You can now able to test for covid yourself by buying covid-19 test kit from authorised store.\n\n<a href="https://portal.mda.gov.my/infographic/768-conditional-approval-list-of-covid-19-test-kit-for-self-test-8-nov-2021.html">View list of approved self-test kit</a></string>
+    <string name="test_info_title2">Test facilities</string>
+    <string name="test_info_desc2">Another alternative to test is by visiting your nearest testing facilities from clinics to hospitals.\n\n<a href="https://covid-19.moh.gov.my/fasiliti-kesihatan/hospital-swasta-dan-klinik-swasta-berdaftar-untuk-covid19">View test facilities in Malaysia</a></string>
+    <string name="reports_title">Reports</string>
+    <string name="protect_yourself_text">Protect yourself</string>
+    <string name="follow_government_text">Follow the government instruction about hygiene and keeping 1 meter physical distancing.</string>
+    <string name="link_to_gov_steps">View government recommendations</string>
+    <string name="call_us_text">Reach out to us</string>
+    <string name="call_number_text">42069</string>
+    <string name="call_number_text_subtitle">Malaysian Covid-19 infoline</string>
+    <string name="call_button">Call now</string>
+    <string name="self_quarantine_text">Self quarantine</string>
+    <string name="follow_government_self_text">Follow government\'s instruction on self-quarantine.</string>
+    <string name="link_to_gov_self_steps">How to self-quarantine</string>
+    <string name="government_recommend_link">https://covid-19.moh.gov.my/garis-panduan/gp-umum-covid19</string>
+    <string name="how_self_quarantine">https://covid-19.moh.gov.my/garis-panduan/pemantauan-kendiri-kes-positif-covid-19-di-rumah</string>
+    <string name="infoline_number">0377239300</string>
+    <string name="new_contact_detail_title">New report</string>
+    <string name="new_contact_detail_subtitle">An infection could be possible on this day.</string>
+    <string name="positive_tested_title">Tested positive</string>
+    <string name="positive_tested_subtitle">You tested positive for the coronavirus disease.</string>
+    <string name="button_permission_location">Allow location</string>
 
 </resources>

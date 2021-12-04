@@ -125,12 +125,7 @@ public class TracingViewModel extends AndroidViewModel {
     }
 
     public void sync() {
-        new Thread() {
-            @Override
-            public void run() {
-                DP3T.sync(getApplication());
-            }
-        }.start();
+        new Thread(() -> DP3T.sync(getApplication())).start();
     }
 
     public void invalidateService() {

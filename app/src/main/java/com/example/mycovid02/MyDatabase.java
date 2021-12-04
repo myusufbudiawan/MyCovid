@@ -14,6 +14,13 @@ import java.security.GeneralSecurityException;
 public class MyDatabase {
 
     private static final String KEY_ONBOARDING_DONE = "onboarding_completed";
+    private static final String KEY_PENDING_REPORTS_HEADER_ANIMATION = "pending_reports_header_animation";
+    private static final String KEY_INFECTED_DATE = "infected_date";
+    private static final String KEY_CALL_PENDING = "call_pending";
+    private static final String KEY_INFORM_TIME_REQ = "inform_time_req";
+    private static final String KEY_INFORM_CODE_REQ = "inform_code_req";
+    private static final String KEY_INFORM_TOKEN_REQ = "inform_token_req";
+
 
     private static MyDatabase instance;
 
@@ -45,5 +52,44 @@ public class MyDatabase {
 
     public void setOnboardingDone(boolean done) {
         myPreference.edit().putBoolean(KEY_ONBOARDING_DONE, done).apply();
+    }
+
+    public boolean isReportsHeaderAnimationPending() {
+        return myPreference.getBoolean(KEY_PENDING_REPORTS_HEADER_ANIMATION, false);
+    }
+
+    public void setInfectedDate(long date) {
+        myPreference.edit().putLong(KEY_INFECTED_DATE, date).apply();
+    }
+
+    public long getInfectedDate() {
+        return myPreference.getLong(KEY_INFECTED_DATE, 0);
+    }
+
+    public boolean isCallPending() {
+        return myPreference.getBoolean(KEY_CALL_PENDING, true);
+    }
+
+    public void setReportsHeaderAnimationPending(boolean b) {
+        myPreference.edit().putBoolean(KEY_PENDING_REPORTS_HEADER_ANIMATION, b).apply();
+    }
+
+    public long getLatestInformRequestTime() {
+        return myPreference.getLong(KEY_INFORM_TIME_REQ, 0);
+    }
+
+    public String getLatestInformCode() {
+        return myPreference.getString(KEY_INFORM_CODE_REQ, null);
+    }
+
+    public String getLatestInformToken() {
+        return myPreference.getString(KEY_INFORM_TOKEN_REQ, null);
+    }
+
+    public void clearInformTimeCodeToken() {
+        myPreference.edit().remove(KEY_INFORM_TIME_REQ)
+                .remove(KEY_INFORM_CODE_REQ)
+                .remove(KEY_INFORM_TOKEN_REQ)
+                .apply();
     }
 }

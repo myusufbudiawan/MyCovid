@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/grey_medium"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/home_toolbar"
+        android:id="@+id/statistic_toolbar"
         android:layout_width="match_parent"
         android:layout_height="69dp"
         android:background="@color/white">
 
         <TextView
+            android:id="@+id/title_cases"
             style="@style/Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,28 +29,17 @@
             android:layout_gravity="center_horizontal"
             android:paddingStart="10dp"
             />
-
     </androidx.appcompat.widget.Toolbar>
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/grey_light_medium">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/city_2"
-            />
+        android:layout_height="match_parent">
 
         <ScrollView
-            android:id="@+id/home_scrollview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent" >
 
             <LinearLayout
-                android:id="@+id/home_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clipChildren="false"
@@ -54,19 +47,31 @@
                 android:orientation="vertical"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
-                android:paddingTop="155dp"
-                android:paddingBottom="30dp" >
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp">
 
                 <include
-                    layout="@layout/card_report"
+                    android:id="@+id/card_what_to_do"
+                    layout="@layout/card_information"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="30dp" />
+                    android:layout_marginBottom="30dp"/>
 
                 <include
-                    layout="@layout/card_encounter"
+                    android:id="@+id/card_common_symptoms"
+                    layout="@layout/card_information"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"/>
+
+                <include
+                    android:id="@+id/card_test_facilities"
+                    layout="@layout/card_information"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"/>
+
+
 
             </LinearLayout>
 

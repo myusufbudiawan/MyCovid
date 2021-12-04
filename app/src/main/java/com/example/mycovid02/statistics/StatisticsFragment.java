@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,13 +21,18 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.github.mikephil.charting.utils.EntryXComparator;
+
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class StatisticsFragment extends Fragment {
@@ -50,7 +56,6 @@ public class StatisticsFragment extends Fragment {
         StatisticsFragment fragment = new StatisticsFragment();
         fragment.setArguments(args);
         return fragment;
-
     }
 
     @Override
@@ -67,6 +72,7 @@ public class StatisticsFragment extends Fragment {
             String case_csv = "https://raw.githubusercontent.com/MoH-Malaysia/covid19-public/main/epidemic/cases_malaysia.csv";
             String deaths_csv = "https://raw.githubusercontent.com/MoH-Malaysia/covid19-public/62d4869d82a963980172968e5ce1a99ed84fea26/epidemic/deaths_malaysia.csv";
 
+//            List<List<String>> records = new ArrayList<>();
             List<List<String>> records = new ArrayList<>();
 
             String ass = "assdog";
@@ -128,6 +134,7 @@ public class StatisticsFragment extends Fragment {
 
                     String[] values = s.split(",");
                     records.add(Arrays.asList(values));
+
                 }
 
                 total_line2 = records.size();
@@ -157,6 +164,7 @@ public class StatisticsFragment extends Fragment {
 
             }
         });
+
         thread.start();
 
     }
@@ -226,8 +234,12 @@ public class StatisticsFragment extends Fragment {
         avgCasesTV.setText("7-day average");
         relativeYesterdayTV.setText("vs yesterday");
         totalAvgCases.setText(avg_active_case_text);
-        percentRelativeYesterday.setText("%" + percentYesterdayStr);
 
+        //format to 1 decimal place
+        DecimalFormat df = new DecimalFormat("###.#");
+        percentRelativeYesterday.setText("%" + df.format(Double.parseDouble(percentYesterdayStr)));
+
+        //Graph setup
         setupGraph();
 
         LineDataSet lineDataSet = new LineDataSet(seven_day_cases,"New cases per day");
@@ -256,6 +268,10 @@ public class StatisticsFragment extends Fragment {
 
         graphCases.animateXY(2000,2000);
 
+        TextView link = view.findViewById(R.id.link);
+
+        link.setText(R.string.hyperlink3);
+        link.setMovementMethod(LinkMovementMethod.getInstance());
 
     }
 
@@ -274,6 +290,7 @@ public class StatisticsFragment extends Fragment {
             seven_day_cases.add(new Entry(day, Float.parseFloat(new_case[i])));
             day++;
         }
+
     }
 
 //    public ValueFormatter ValueFormatter() {

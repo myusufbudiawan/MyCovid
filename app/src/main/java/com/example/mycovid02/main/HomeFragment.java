@@ -13,24 +13,19 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.mycovid02.MyDatabase;
 import com.example.mycovid02.R;
+import com.example.mycovid02.reports.ReportsFragment;
 import com.example.mycovid02.tracing.TracingViewModel;
 
 public class HomeFragment extends Fragment {
 
-    private MyDatabase myDatabase;
-
     private TracingViewModel tracingViewModel;
-    private ScrollView scrollView;
 
     private View infobox;
     private View tracingCard;
-    private View cardNotifications;
     private View reportStatusBubble;
     private View reportStatusView;
     private View reportErrorView;
-    private View cardTestFrame;
-    private View cardTest;
-    private View loadingView;
+    private View cardReport;
 
     public HomeFragment() {
         super(R.layout.home_fragment);
@@ -51,7 +46,7 @@ public class HomeFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        myDatabase = MyDatabase.getInstance(getContext());
+        MyDatabase myDatabase = MyDatabase.getInstance(getContext());
         tracingViewModel = new ViewModelProvider(requireActivity()).get(TracingViewModel.class);
 
         getChildFragmentManager()
@@ -67,12 +62,17 @@ public class HomeFragment extends Fragment {
         reportStatusBubble = view.findViewById(R.id.report_status_bubble);
         reportStatusView = reportStatusBubble.findViewById(R.id.report_status);
         reportErrorView = reportStatusBubble.findViewById(R.id.report_errors);
-        cardNotifications = view.findViewById(R.id.card_report);
-        scrollView = view.findViewById(R.id.home_scrollview);
+        cardReport = view.findViewById(R.id.card_report);
+        ScrollView scrollView = view.findViewById(R.id.home_scrollview);
         tracingCard = view.findViewById(R.id.card_tracing);
 
         setupTracingView();
+        setupReports();
+        setupPositiveTested();
 
+    }
+
+    private void setupPositiveTested() {
     }
 
     @Override
@@ -104,5 +104,12 @@ public class HomeFragment extends Fragment {
                 .replace(R.id.main_fragment_container, ContactFragment.newInstance())
                 .addToBackStack(ContactFragment.class.getCanonicalName())
                 .commit();
+    }
+
+    private void setupReports() {
+        cardReport.setOnClickListener(v -> getParentFragmentManager().beginTransaction()
+        .replace(R.id.main_fragment_container, ReportsFragment.newInstance())
+        .addToBackStack(ReportsFragment.class.getCanonicalName())
+        .commit());
     }
 }
